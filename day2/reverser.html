@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Reverser</title>
+</head>
+
+<body>
+    <form id = "toBeReversed">
+        <input id='textInput' type="text">
+        <input type="submit" value="Reverse" >
+        <p id='output'>
+          Please type something
+        </p>
+
+    </form>
+
+    <script>
+			function reverser(str) {
+				return str.split('').reverse().join('')
+			}
+			// console.log(reverser('kenny'))
+
+
+			var toBeReversed = document.querySelector("#toBeReversed")
+			// console.log(toBeReversed)
+      toBeReversed.addEventListener("submit", function(event) {
+        event.preventDefault()
+        var textInput = document.getElementById('textInput')
+
+        document.getElementById('output').innerText = reverser(textInput.value)
+
+
+       })
+    </script>
+</body>
+
+</html>
